@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaizen Shop - บริการทำเซิร์ฟเวอร์ Discord</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0b0713;
+            --container-bg: #140d24;
+            --accent-purple: #a855f7;
+            --text-color: #f1ebf9;
+            --muted-purple: #6b21a8;
+            --hover-purple: #d8b4fe;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Kanit', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: var(--container-bg);
+            border: 1px solid #2e1065;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        /* ส่วนหัวเว็บ */
+        .header {
+            text-align: center;
+            border-bottom: 2px solid var(--muted-purple);
+            padding-bottom: 25px;
+            margin-bottom: 35px;
+        }
+
+        .header h1 {
+            color: var(--hover-purple);
+            font-size: 2.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #c084fc;
+            font-size: 1.1rem;
+            font-style: italic;
+        }
+
+        .section-title {
+            color: #e9d5ff;
+            font-size: 1.4rem;
+            border-left: 4px solid var(--accent-purple);
+            padding-left: 12px;
+            margin: 30px 0 15px 0;
+            font-weight: 500;
+        }
+
+        /* ตารางเรทราคา */
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 35px;
+            background-color: #1a1033;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .price-table th {
+            background-color: #3b0764;
+            color: #f3e8ff;
+            text-align: left;
+            padding: 14px 18px;
+            font-size: 1.1rem;
+            border-bottom: 2px solid var(--muted-purple);
+        }
+
+        .price-table td {
+            padding: 12px 18px;
+            border-bottom: 1px solid #2e1065;
+            font-size: 1.05rem;
+        }
+
+        .price-table tr:nth-child(even) td {
+            background-color: #140d24;
+        }
+
+        .price-table .price-cell {
+            text-align: right;
+            font-weight: bold;
+            color: var(--hover-purple);
+            font-size: 1.15rem;
+        }
+
+        /* ส่วนรายละเอียด & เงื่อนไข */
+        .info-box {
+            background-color: #140d24;
+            border: 1px solid var(--muted-purple);
+            border-radius: 8px;
+            padding: 20px 25px;
+            margin-bottom: 35px;
+        }
+
+        .info-box ul {
+            list-style-position: inside;
+        }
+
+        .info-box li {
+            margin-bottom: 12px;
+            color: #e2d1f9;
+        }
+
+        .info-box li:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-box strong {
+            color: #f3e8ff;
+        }
+
+        /* ส่วนท้ายและการติดต่อ */
+        .footer {
+            background: linear-gradient(135deg, #2e1065 0%, #3b0764 100%);
+            border: 1px solid var(--muted-purple);
+            border-radius: 8px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .footer h3 {
+            color: #f3e8ff;
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+
+        .contact-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            font-size: 1.1rem;
+            color: #e8d5ffd9;
+        }
+
+        .contact-item strong {
+            color: #f3e8ff;
+        }
+
+        .portfolio-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: var(--hover-purple);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--hover-purple);
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-link:hover {
+            color: #f3e8ff;
+            border-bottom-color: #f3e8ff;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            .contact-grid {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>KAIZEN SHOP</h1>
+            <p>ได้งานภายในวันที่สั่งทุกคิว - บริการออกแบบเซิร์ฟเวอร์ Discord คุณภาพสูง</p>
+        </div>
+
+        <div class="section-title">เรทราคาทำเซิร์ฟเวอร์</div>
+        <table class="price-table">
+            <thead>
+                <tr>
+                    <th>ประเภทบริการ</th>
+                    <th style="text-align: right;">ราคาเริ่มต้น (บาท)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>ดิสไม่มีระบบ (ห้องเปล่าๆ)</td><td class="price-cell">10+</td></tr>
+                <tr><td>ดิสส่วนตัว</td><td class="price-cell">89</td></tr>
+                <tr><td>ดิสกิลล์</td><td class="price-cell">109</td></tr>
+                <tr><td>ดิสแคลน</td><td class="price-cell">109</td></tr>
+                <tr><td>ดิสแก๊ง</td><td class="price-cell">109</td></tr>
+                <tr><td>ดิสร้านค้า</td><td class="price-cell">159</td></tr>
+                <tr><td>ดิสสตรีมเมอร์</td><td class="price-cell">199</td></tr>
+                <tr><td>ดิสคอมมูนิตี้</td><td class="price-cell">299</td></tr>
+                <tr><td>ดิสประเทศ</td><td class="price-cell">399</td></tr>
+                <tr><td>ดิสแนวโรลเพลย์ (ห้อง/ระบบเยอะ)</td><td class="price-cell">699</td></tr>
+            </tbody>
+        </table>
+
+        <div class="section-title">รายละเอียดบริการและข้อตกลง</div>
+        <div class="info-box">
+            <ul>
+                <li><strong>การบรีฟงาน:</strong> สามารถบรีฟได้ตามความต้องการ ลูกค้าสามารถพกบรีฟมาเอง หรือเลือกใช้แบบที่ทางร้านเคยทำได้ครับ</li>
+                <li><strong>การแก้ไขงาน:</strong> หากงานเสร็จสิ้นแล้วและต้องการแก้นอกเหนือจากที่บรีฟไว้ หรือบรีฟไม่ชัดเจน จะคิดค่าใช้จ่ายเพิ่มเติมตามราคางาน</li>
+                <li><strong>นโยบายการคืนเงิน:</strong> หากเริ่มดำเนินงานไปแล้ว ทางร้านจะไม่คืนเงินทุกกรณี แต่หากยังไม่เริ่มทำงาน จะคืนให้ 50% ของราคางาน</li>
+                <li><strong>หมายเหตุเพิ่มเติม:</strong> ราคาต่างๆ อาจมีการเปลี่ยนแปลงขึ้นอยู่กับระบบ จำนวนห้อง และการตกแต่งที่ลูกค้าต้องการเพิ่มเติม</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <h3>สนใจสั่งงานติดต่อที่ผู้โพสต์ได้เลย</h3>
+            <p style="color: #d8b4fe; font-size: 1rem;">งบไม่พอลดได้ แต่ไม่กดราคาเกินไปนะคะ</p>
+            
+            <div class="contact-grid">
+                <div class="contact-item"><strong>Facebook:</strong> 카이ゼン</div>
+                <div class="contact-item"><strong>Discord:</strong> ac._.ac</div>
+            </div>
+
+            <div>
+                <a class="portfolio-link" href="https://drive.google.com/drive/folders/187AelMeeOfsdvWFpSHq8QxwIPsw7Kmzd?usp=drive_link" target="_blank">
+                    คลิกเพื่อดูตัวอย่างผลงานบน Google Drive
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
